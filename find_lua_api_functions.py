@@ -74,7 +74,7 @@ def find_static_functions() -> None:
         libname = assert_string_reference_at(cast(MediumLevelILConstPtr, libname).constant)
         reg_ptr = cast(MediumLevelILConstPtr, reg_ptr).constant
 
-        rename_lua_functions(libname + ".", reg_ptr)
+        rename_lua_functions(libname.value + ".", reg_ptr)
 
 def register_class(name: str, typeid: int, metatable_ptr: int, member_functions_ptr: int) -> None:
     print(name, typeid, hex(metatable_ptr), hex(member_functions_ptr))
@@ -210,5 +210,5 @@ def find_classes() -> None:
         register_class(name.value, typeid_var.value, metatable_ptr, member_functions_ptr)
 
 
-# find_static_functions()
+find_static_functions()
 find_classes()
