@@ -5,6 +5,8 @@ files = [
     "find_lua_api_functions.py",
     "find_globals.py",
     "prepend_vftable_names.py",
+    "structs/common.py",
+    "structs/bitstream.py",
 ]
 
 for file in files:
